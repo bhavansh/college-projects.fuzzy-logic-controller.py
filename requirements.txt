@@ -1,0 +1,7 @@
+###### Requirements without Version Specifiers ######
+scikit-fuzzy
+numpy
+pandas
+plotly
+matplotlib
+streamlit
