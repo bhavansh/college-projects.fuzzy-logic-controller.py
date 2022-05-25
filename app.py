@@ -108,52 +108,52 @@ rule = st.selectbox('Select Rule:', [
                     "Rule_1", "Rule_2", "Rule_3", "Rule_4", "Rule_5", "Rule_6", "Rule_7", "Rule_8", "Rule_9", "Rule_10", "Rule_11", "Rule_12", "Rule_13", "Rule_14", "Rule_15", "Rule_16"])
 if rule == "Rule_1":
     st.write(Rule_1)
-    st.pyplot(ctrl.ControlSystem([Rule_1]).view())
+    # st.pyplot(ctrl.ControlSystem([Rule_1]).view())
 elif rule == "Rule_2":
     st.write(Rule_2)
-    st.pyplot(ctrl.ControlSystem([Rule_2]).view())
+    # st.pyplot(ctrl.ControlSystem([Rule_2]).view())
 elif rule == "Rule_3":
     st.write(Rule_3)
-    st.pyplot(ctrl.ControlSystem([Rule_3]).view())
+    # st.pyplot(ctrl.ControlSystem([Rule_3]).view())
 elif rule == "Rule_4":
     st.write(Rule_4)
-    st.pyplot(ctrl.ControlSystem([Rule_4]).view())
+    # st.pyplot(ctrl.ControlSystem([Rule_4]).view())
 elif rule == "Rule_5":
     st.write(Rule_5)
-    st.pyplot(ctrl.ControlSystem([Rule_5]).view())
+    # st.pyplot(ctrl.ControlSystem([Rule_5]).view())
 elif rule == "Rule_6":
     st.write(Rule_6)
-    st.pyplot(ctrl.ControlSystem([Rule_6]).view())
+    # st.pyplot(ctrl.ControlSystem([Rule_6]).view())
 elif rule == "Rule_7":
     st.write(Rule_7)
-    st.pyplot(ctrl.ControlSystem([Rule_7]).view())
+    # st.pyplot(ctrl.ControlSystem([Rule_7]).view())
 elif rule == "Rule_8":
     st.write(Rule_8)
-    st.pyplot(ctrl.ControlSystem([Rule_8]).view())
+    # st.pyplot(ctrl.ControlSystem([Rule_8]).view())
 elif rule == "Rule_9":
     st.write(Rule_9)
-    st.pyplot(ctrl.ControlSystem([Rule_9]).view())
+    # st.pyplot(ctrl.ControlSystem([Rule_9]).view())
 elif rule == "Rule_10":
     st.write(Rule_10)
-    st.pyplot(ctrl.ControlSystem([Rule_10]).view())
+    # st.pyplot(ctrl.ControlSystem([Rule_10]).view())
 elif rule == "Rule_11":
     st.write(Rule_11)
-    st.pyplot(ctrl.ControlSystem([Rule_11]).view())
+    # st.pyplot(ctrl.ControlSystem([Rule_11]).view())
 elif rule == "Rule_12":
     st.write(Rule_12)
-    st.pyplot(ctrl.ControlSystem([Rule_12]).view())
+    # st.pyplot(ctrl.ControlSystem([Rule_12]).view())
 elif rule == "Rule_13":
     st.write(Rule_13)
-    st.pyplot(ctrl.ControlSystem([Rule_13]).view())
+    # st.pyplot(ctrl.ControlSystem([Rule_13]).view())
 elif rule == "Rule_14":
     st.write(Rule_14)
-    st.pyplot(ctrl.ControlSystem([Rule_14]).view())
+    # st.pyplot(ctrl.ControlSystem([Rule_14]).view())
 elif rule == "Rule_15":
     st.write(Rule_15)
-    st.pyplot(ctrl.ControlSystem([Rule_15]).view())
+    # st.pyplot(ctrl.ControlSystem([Rule_15]).view())
 elif rule == "Rule_16":
     st.write(Rule_16)
-    st.pyplot(ctrl.ControlSystem([Rule_16]).view())
+    # st.pyplot(ctrl.ControlSystem([Rule_16]).view())
 
 
 BrakingPower_ctrl = ctrl.ControlSystem(
