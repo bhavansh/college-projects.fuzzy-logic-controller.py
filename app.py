@@ -16,7 +16,11 @@ Speed_inp = st.slider("Speed", min_value=0, max_value=60)
 
 Distance = ctrl.Antecedent(np.arange(0, 500, 1), 'Distance')
 Speed = ctrl.Antecedent(np.arange(0, 60, 1), 'Speed')
-BrakePower = ctrl.Consequent(np.arange(0, 100, 1), 'BrakePower')
+BrakePower = ctrl.Consequent(np.arange(0, 100, 1), 'BrakePower', 'mom')
+
+# Distance.defuzzify_method
+# Speed.defuzzify_method
+# BrakePower.defuzzify_method
 
 # Distance.automf(4, names=['Very Short Distance',
 #                           'Short Distance', 'Large Distance', 'Very Large Distance'])
