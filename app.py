@@ -18,12 +18,29 @@ Distance = ctrl.Antecedent(np.arange(0, 500, 1), 'Distance')
 Speed = ctrl.Antecedent(np.arange(0, 60, 1), 'Speed')
 BrakePower = ctrl.Consequent(np.arange(0, 100, 1), 'BrakePower')
 
-Distance.automf(4, names=['Very Short Distance',
-                          'Short Distance', 'Large Distance', 'Very Large Distance'])
-Speed.automf(4, names=['Very Low Speed', 'Low Speed',
-                       'High Speed', 'Very High Speed'])
-BrakePower.automf(4, names=['Very Low Power',
-                            'Low Power', 'High Power', 'Very High Power'])
+# Distance.automf(4, names=['Very Short Distance',
+#                           'Short Distance', 'Large Distance', 'Very Large Distance'])
+# Speed.automf(4, names=['Very Low Speed', 'Low Speed',
+#                        'High Speed', 'Very High Speed'])
+# BrakePower.automf(4, names=['Very Low Power',
+#                             'Low Power', 'High Power', 'Very High Power'])
+
+Distance['Very Short Distance'] = fuzz.trimf(Distance.universe, [0, 0, 100])
+Distance['Short Distance'] = fuzz.trimf(Distance.universe, [0, 100, 400])
+Distance['Large Distance'] = fuzz.trimf(Distance.universe, [100, 400, 500])
+Distance['Very Large Distance'] = fuzz.trimf(
+    Distance.universe, [400, 500, 500])
+
+Speed['Very Low Speed'] = fuzz.trimf(Speed.universe, [0, 0, 10])
+Speed['Low Speed'] = fuzz.trimf(Speed.universe, [0, 10, 50])
+Speed['High Speed'] = fuzz.trimf(Speed.universe, [10, 50, 60])
+Speed['Very High Speed'] = fuzz.trimf(Speed.universe, [50, 60, 60])
+
+BrakePower['Very Low Power'] = fuzz.trimf(BrakePower.universe, [0, 0, 20])
+BrakePower['Low Power'] = fuzz.trimf(BrakePower.universe, [0, 20, 80])
+BrakePower['High Power'] = fuzz.trimf(BrakePower.universe, [20, 80, 100])
+BrakePower['Very High Power'] = fuzz.trimf(BrakePower.universe, [80, 100, 100])
+
 
 st.write("Membership Function for Distance")
 st.pyplot(Distance.view())
@@ -65,6 +82,26 @@ Rule_15 = ctrl.Rule(Distance['Very Large Distance']
                     & Speed['High Speed'], BrakePower['Low Power'])
 Rule_16 = ctrl.Rule(Distance['Very Large Distance']
                     & Speed['Very High Speed'], BrakePower['Low Power'])
+
+"""
+IF Distance is Very Short and Speed is Very Low THEN BrakePower is High
+IF Distance is Very Short and Speed is Low THEN BrakePower is High
+IF Distance is Very Short and Speed is High THEN BrakePower is Very High
+IF Distance is Very Short and Speed is Very High THEN BrakePower is Very High
+IF Distance is Short and Speed is Very Low THEN BrakePower is Low
+IF Distance is Short and Speed is Low THEN BrakePower is Low
+IF Distance is Short and Speed is High THEN BrakePower is High
+IF Distance is Short and Speed is Very High THEN BrakePower is High
+IF Distance is Large and Speed is Very Low THEN BrakePower is Very Low
+IF Distance is Large and Speed is Low THEN BrakePower is Very Low
+IF Distance is Large and Speed is High THEN BrakePower is Low
+IF Distance is Large and Speed is Very High THEN BrakePower is High
+IF Distance is Very Large and Speed is Very Low THEN BrakePower is Very Low
+IF Distance is Very Large and Speed is Low THEN BrakePower is Very Low
+IF Distance is Very Large and Speed is High THEN BrakePower is Low
+IF Distance is Very Large and Speed is Very High THEN BrakePower is Low
+
+"""
 
 st.write("Rules")
 rule = st.selectbox('Select Rule:', [
